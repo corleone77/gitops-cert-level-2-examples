@@ -1,4 +1,4 @@
-Version: argoproj.io/v1alpha1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: hpa-example01
@@ -17,11 +17,11 @@ spec:
     server: https://kubernetes.default.svc
     namespace: example01
 
-#  ignoreDifferences:
-#  - group: apps
-#    kind: Deployment
-#    jsonPointers:
-#    - /spec/replicas
+  ignoreDifferences:
+  - group: apps
+    kind: Deployment
+    jsonPointers:
+    - /spec/replicas
 
   # Sync policy
   syncPolicy:
